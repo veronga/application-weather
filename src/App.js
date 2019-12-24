@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Info from "./components/Info";
+import Form from "./components/Form";
+import Weather from "./components/Weather";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const API_KEY = "4a72e8fac85f96fa767ebfe0107463ad";
+
+class App extends Component {
+  gettingWeather = async () => {
+    const api_url = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=Kiev,ua&appid=${API_KEY}units=metric`
+    );
+    const data = await api_url.json();
+    console.log(data);
+  };
+
+  render() {
+    return (
+      <div>
+        <Info />
+        <Form />
+        <Weather />
+      </div>
+    );
+  }
 }
 
 export default App;
