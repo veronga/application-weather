@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Weather extends Component {
   render() {
     return (
-      <d iv>
+      <div>
         {this.props.city && (
           <div>
             <p>
@@ -14,7 +14,8 @@ class Weather extends Component {
             <p>Заход солнца:{this.props.sunset}</p>
           </div>
         )}
-      </d>
+        <p>{this.props.error}</p>
+      </div>
     );
   }
 }
