@@ -57,9 +57,6 @@ class App extends Component {
         <div className="main">
           <div className="container">
             <div className="row">
-              <div className="col-sm-5 info">
-                <Info />
-              </div>
               <div className="col-sm-7 form">
                 <Form weatherMethod={this.gettingWeather} />
                 <Weather
@@ -70,6 +67,9 @@ class App extends Component {
                   sunset={this.state.sunset}
                   error={this.state.error}
                 />
+              </div>
+              <div className="col-sm-5 info">
+                <Info />
               </div>
             </div>
           </div>
